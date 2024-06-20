@@ -1,22 +1,25 @@
-import { useId } from 'react';
 import cn from 'clsx';
+import { useId } from 'react';
 
 import style from './Input.module.css';
 
 const Input = ({
-  type = 'text',
   name,
   value,
+  label,
   onChange,
   placeholder,
-  label,
-  containerClassName,
+  type = 'text',
   inputClassName,
+  containerClassName,
 }) => {
   const id = useId();
 
   return (
-    <div className={cn(style.formControl, containerClassName)}>
+    <div
+      data-testid="inputContainer"
+      className={cn(style.formControl, containerClassName)}
+    >
       {label && (
         <label className={style.label} htmlFor={id}>
           {label}
@@ -25,12 +28,12 @@ const Input = ({
 
       <input
         id={id}
-        className={cn(style.input, inputClassName)}
         name={name}
         type={type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        className={cn(style.input, inputClassName)}
       />
     </div>
   );
