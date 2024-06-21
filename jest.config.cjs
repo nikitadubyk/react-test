@@ -4,7 +4,11 @@ const config = {
   testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'jsx'],
   setupFilesAfterEnv: ['<rootDir>/internal/jest.setup.js'],
-  collectCoverageFrom: ['<rootDir>/src/**/*.{js, jsx, ts, tsx}'],
+  collectCoverageFrom: [
+    '!src/main.jsx',
+    '!src/**/index.js',
+    '<rootDir>/src/**/*.{js, jsx, ts, tsx}',
+  ],
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
