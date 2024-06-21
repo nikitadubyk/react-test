@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { validatePassword } from '../helpers/validatePassword';
-import { wait } from '../helpers/wait';
 
-const useCreateUser = () => {
+import { wait } from '../helpers/wait';
+import { validatePassword } from '../helpers/validatePassword';
+
+export const useCreateUser = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -27,5 +28,3 @@ const useCreateUser = () => {
 
   return { successMessage, errorMessage, onSubmit, onSuccess, onError };
 };
-
-export { useCreateUser };
