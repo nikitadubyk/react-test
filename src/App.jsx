@@ -10,7 +10,7 @@ function App() {
     useCreateUser();
 
   return (
-    <>
+    <main data-testid="app">
       <Title>Create user</Title>
       <Form onSubmit={onSubmit} onSuccess={onSuccess} onError={onError}>
         <Input label="User name" name="name" />
@@ -19,7 +19,7 @@ function App() {
       </Form>
       {successMessage && <Text isSuccess>{successMessage}</Text>}
       {errorMessage && <Text isError>{errorMessage}</Text>}
-    </>
+    </main>
   );
 }
 
